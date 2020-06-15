@@ -8,8 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@material-ui/core": "^4.10.2",
+    "@material-ui/icons": "^4.9.1",
+    "babel-plugin-styled-components": "^1.10.7",
+    "gradient-path": "^2.1.0",
     "next": "^9.3.3",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "tinygradient": "^1.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@types/react": "^16.9.36",
+    "typescript": "^3.9.5"
   }
 }
