@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Tooltip, Fade } from '@material-ui/core';
+import { Link, Tooltip, Fade } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -13,12 +13,20 @@ const useStyles = makeStyles((theme) => ({
 
   main: {
     lineHeight: "100vh",
-    "& > *": {
-      margin: theme.spacing(0, 2.5),
-      height: 45,
-      width: 45,
+    "& > a": {
+      [theme.breakpoints.up('sm')]: {
+        padding: theme.spacing(2, 0) 
+      }
+    },
+    "& > a > *": {
+      margin: theme.spacing(0, 1),
       verticalAlign: "middle",
-      color: "#B0C4DE"
+      color: "#B0C4DE",
+      [theme.breakpoints.up('sm')]: {
+        margin: theme.spacing(0, 2.5),
+        height: 45,
+        width: 45,
+      }
     }
   },
 
@@ -36,9 +44,12 @@ const useStyles = makeStyles((theme) => ({
 
   instagram: {
     fill: "#B0C4DE",
-    fontSize: "45px",
+    fontSize: "24px",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: "45px",
+    },
     "&:hover": {
-      background: "-webkit-linear-gradient(45deg, yellow, red, purple)",
+      background: "linear-gradient(45deg, yellow, red, purple)",
       WebkitBackgroundClip: "text",
       backgroundClip: "text",
       textFillColor: "transparent"
@@ -52,17 +63,20 @@ const useStyles = makeStyles((theme) => ({
   },
 
   soundcloud: {
-    height: 50,
-    width: 50,
     fill: "#B0C4DE",
+    fontSize: "24px",
+    [theme.breakpoints.up('sm')]: {
+      fontSize: "45px",
+    },
     "&:hover": { 
-      fill: "#ff6a00"
+      color: "#ff6a00"
     }
   }
 }));
 
 
 /*
+instagram svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" className={classes.instagram}>
             <path ref={instaRef} d="
             M12 2.163
@@ -87,8 +101,15 @@ const useStyles = makeStyles((theme) => ({
           </svg>
 */
 
+/*
+soundcloud svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" className={classes.soundcloud}><path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.268 0 .914.394 1.721 1 2.268v-4.536zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-2.233-2.168-3.772-4.121-2.815zm-16.879-.027c-.302-.024-.526-.03-1 .122v5.689c.446.143.636.138 1 .138v-5.949z"/></svg>
+          
+*/
+
 const Home = () => {
   const classes = useStyles();
+  const preventDefault = (event: React.SyntheticEvent) => event.preventDefault();
 
   return (
     <div className={classes.root}>
@@ -101,19 +122,29 @@ const Home = () => {
 
       <main className={classes.main}>
         <Tooltip title="Check Out my Code" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <GitHubIcon classes={{ root: classes.github }} />
+          <Link href="https://github.com/dvdapp/" onClick={preventDefault}>
+            <GitHubIcon classes={{ root: classes.github }} />
+          </Link>
         </Tooltip>
         <Tooltip title="View my Resume" placement="top" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <LinkedInIcon classes={{ root: classes.linkedin }} />
+          <Link href="https://www.linkedin.com/in/davidnisenbaum/" onClick={preventDefault}>
+            <LinkedInIcon classes={{ root: classes.linkedin }} />
+          </Link>
         </Tooltip>
         <Tooltip title="Watch my Adventures" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <YouTubeIcon classes={{ root: classes.youtube }}/>
+          <Link href="https://www.youtube.com/channel/UCYRrV-BJKHndebk1F09d1FQ/" onClick={preventDefault}>
+            <YouTubeIcon classes={{ root: classes.youtube }}/>
+          </Link>
         </Tooltip> 
         <Tooltip title="Follow my Social Life" placement="top" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <i className={`${classes.instagram} fab fa-instagram`}></i>
+          <Link href="https://www.instagram.com/david.nisenn/" onClick={preventDefault}>
+            <i className={`${classes.instagram} fab fa-instagram`} />
+          </Link>
         </Tooltip>
         <Tooltip title="Listen to my Music" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" className={classes.soundcloud}><path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.268 0 .914.394 1.721 1 2.268v-4.536zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-2.233-2.168-3.772-4.121-2.815zm-16.879-.027c-.302-.024-.526-.03-1 .122v5.689c.446.143.636.138 1 .138v-5.949z"/></svg>
+          <Link href="https://soundcloud.com/neighb0urs/" onClick={preventDefault}>
+            <i className={`${classes.soundcloud} fab fa-soundcloud`} />
+          </Link>
         </Tooltip>
       </main>
     </div>
