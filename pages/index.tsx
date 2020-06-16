@@ -122,27 +122,27 @@ const Home = () => {
 
       <main className={classes.main}>
         <Tooltip title="Check Out my Code" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <Link href="https://github.com/dvdapp/" onClick={preventDefault}>
+          <Link href="https://github.com/dvdapp/">
             <GitHubIcon classes={{ root: classes.github }} />
           </Link>
         </Tooltip>
         <Tooltip title="View my Resume" placement="top" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <Link href="https://www.linkedin.com/in/davidnisenbaum/" onClick={preventDefault}>
+          <Link href="https://www.linkedin.com/in/davidnisenbaum/">
             <LinkedInIcon classes={{ root: classes.linkedin }} />
           </Link>
         </Tooltip>
         <Tooltip title="Watch my Adventures" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <Link href="https://www.youtube.com/channel/UCYRrV-BJKHndebk1F09d1FQ/" onClick={preventDefault}>
+          <Link href="https://www.youtube.com/channel/UCYRrV-BJKHndebk1F09d1FQ/">
             <YouTubeIcon classes={{ root: classes.youtube }}/>
           </Link>
         </Tooltip> 
         <Tooltip title="Follow my Social Life" placement="top" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <Link href="https://www.instagram.com/david.nisenn/" onClick={preventDefault}>
+          <Link href="https://www.instagram.com/david.nisenn/">
             <i className={`${classes.instagram} fab fa-instagram`} />
           </Link>
         </Tooltip>
         <Tooltip title="Listen to my Music" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-          <Link href="https://soundcloud.com/neighb0urs/" onClick={preventDefault}>
+          <Link href="https://soundcloud.com/neighb0urs/">
             <i className={`${classes.soundcloud} fab fa-soundcloud`} />
           </Link>
         </Tooltip>
