@@ -1,6 +1,6 @@
 ## davidnisenbaum.com
 
-This is a next.js app for my personal website. It's a simple site with links to my various socials. Comments and critiscms are always appreciated :)
+This is a next.js app for my personal website. It's a simple site with links to my various socials. Comments and criticisms are always appreciated :)
 
 ### Getting started
 
