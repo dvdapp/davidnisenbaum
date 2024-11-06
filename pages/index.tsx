@@ -135,11 +135,6 @@ class Home extends Component<Props, State> {
                   <i className={`${classes.instagram} fab fa-instagram`} />
                 </Link>
               </Tooltip>
-              <Tooltip title="Listen to my Music" arrow TransitionComponent={Fade} TransitionProps={{ timeout: 600 }}>
-                <Link href="https://soundcloud.com/neighb0urs/">
-                  <i className={`${classes.soundcloud} fab fa-soundcloud`} />
-                </Link>
-              </Tooltip>
             </>
           )
           }
